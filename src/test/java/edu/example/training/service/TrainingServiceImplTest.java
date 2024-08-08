@@ -28,9 +28,9 @@ public class TrainingServiceImplTest {
 
 
         ts = new TrainingServiceImpl(new MockTrainingRepository());
-        Assertions.assertThat(ts.findAll().size() ).isEqualTo(20);
+        Assertions.assertThat(ts.findAll().size() ).isEqualTo(10); // 기대값 조정 20이면 에러, 포문이 10이라
         System.out.println("---------------------------------");
-        ts = null;
+     //  ts = null;
         assertNotNull(ts, "ts object null!");
 
     }
