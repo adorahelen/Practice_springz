@@ -8,7 +8,7 @@ public class JdbcTrainingRepository implements TrainingRepository {
 
     @Override
     public List<Training> selectAll() {
-        System.out.println("DB에서 데이터 가져오기");
+        System.out.println("DB에서 데이터 가져오기 --------");
         return List.of();
     }
 }
