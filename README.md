@@ -13,3 +13,7 @@
 2. 자바 플랫폼&엔터프라이즈 애플리케이션
    - 서블릿 1.0 : HTTP 요청에 응답할 수 있는 축소된 애플리케이션 1997년 출시
    - 서블릿 2.2 : JDBC, JSP, JMS, JTA, 등을 포함하여 1999년 출시 (J2EE) <- 자바2 플랫폼 엔터프라이즈 에디션 
+   - 자바 EE 5 (2006년) : JPA 1.0, 공용어노테이션 API 1.0
+   - 자바 EE 6 (2009년) : 엔터프라이즈 애플리케이션 기술 ["CDI 1.0"(자바 컨텍스트, 의존성 주입)] + Bean(빈)1.0, 어노테이션 기반 프로그래밍
+   - 자바 EE 7 (2013년) :
+     * JDBC, try-catch-finally => try-with-resource [try(Connection connection = a.getConnection()),,,try + catch]
