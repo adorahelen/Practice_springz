@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.List;
 
 @Repository
@@ -26,11 +27,16 @@ public class JdbcTrainingRepository implements TrainingRepository {
     @Override
     public List<Training> selectAll() {
         System.out.println("DB에서 데이터 가져오기 --------");
-        try (Connection con = dataSource.getConnection()) {
+
+
+        try (Connection con = dataSource.getConnection();
+             Statement stmt = con.createStatement() ){
             System.out.println("Con ok");
+            System.out.println("stmt ok");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+
         return List.of();
     }
 }

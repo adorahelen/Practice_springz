@@ -10,6 +10,9 @@ import edu.example.training.service.TrainingService;
 import edu.example.training.service.TrainingServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
+import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import javax.sql.DataSource;
 import java.util.List;
@@ -20,12 +23,17 @@ import java.util.List;
 // @ComponentScan("com.example.traing") // 경로를 지정하여 컴포넌트 스캔
 public class TrainingApp {
     @Bean
-    public DataSource dataSource() {
-        HikariDataSource dataSource = new HikariDataSource();
-        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/testdb");
-        dataSource.setUsername("root");
-        dataSource.setPassword("12345678");
+    public DataSource dataSource() { // HikariCp 와 MySQl 로 데이터 소스 지정
+        // 이거 쓸필요 없음, H2 라는 내장 데이터베이스가 있음
+//        HikariDataSource dataSource = new HikariDataSource();
+//        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+//        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/testdb");
+//        dataSource.setUsername("root");
+//        dataSource.setPassword("12345678");
+
+        EmbeddedDatabase dataSource
+                = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
+
         return dataSource;
     }
 
