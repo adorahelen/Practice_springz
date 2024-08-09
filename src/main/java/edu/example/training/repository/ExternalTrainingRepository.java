@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-@Repository
-@Profile("production")
+//@Repository
+//@Profile("production")
 public class ExternalTrainingRepository implements TrainingRepository {
 // 이론상 위에 레포지토리 어노테이션이 기존의 것과 중복되기에 에러가 뜨지만
     // JVM 환경설정안에 프로파일 지정으로 해결하거나

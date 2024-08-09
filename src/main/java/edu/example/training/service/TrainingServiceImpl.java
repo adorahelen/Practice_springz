@@ -32,6 +32,7 @@ public class TrainingServiceImpl implements TrainingService{
         // IOC 제어의 역전 더 이상 개발자가 일일이 제어하지 않는다. 알아서 뉴 해서 넣어준다 @Authoried
      //  TrainingRepository tr = new JdbcTrainingRepository();
         //  tr = new MockTrainingRepository();
+      //  System.out.println("=======");
       return trainingRepository.selectAll();
     }
 }
