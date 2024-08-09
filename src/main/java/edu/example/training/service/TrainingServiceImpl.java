@@ -3,7 +3,7 @@ package edu.example.training.service;
 
 import edu.example.training.entity.Training;
 import edu.example.training.repository.JdbcTrainingRepository;
-import edu.example.training.repository.MockTrainingRepository;
+// import edu.example.training.repository.MockTrainingRepository;
 import edu.example.training.repository.TrainingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,5 +34,11 @@ public class TrainingServiceImpl implements TrainingService{
         //  tr = new MockTrainingRepository();
       //  System.out.println("=======");
       return trainingRepository.selectAll();
+    }
+
+    @Override
+    public void findTitle(String id) {
+        trainingRepository.selectTitle(id);
+
     }
 }

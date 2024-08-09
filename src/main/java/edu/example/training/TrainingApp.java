@@ -4,12 +4,13 @@ import com.zaxxer.hikari.HikariDataSource;
 import edu.example.shopping.ShoppingApp;
 import edu.example.training.entity.Training;
 import edu.example.training.repository.JdbcTrainingRepository;
-import edu.example.training.repository.MockTrainingRepository;
+
 import edu.example.training.repository.TrainingRepository;
 import edu.example.training.service.TrainingService;
 import edu.example.training.service.TrainingServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabase;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
@@ -24,19 +25,24 @@ import java.util.List;
 public class TrainingApp {
     @Bean
     public DataSource dataSource() { // HikariCp 와 MySQl 로 데이터 소스 지정
-        // 이거 쓸필요 없음, H2 라는 내장 데이터베이스가 있음
-//        HikariDataSource dataSource = new HikariDataSource();
-//        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
-//        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/testdb");
-//        dataSource.setUsername("root");
-//        dataSource.setPassword("12345678");
+//         이거 쓸필요 없음, H2 라는 내장 데이터베이스가 있음
+//         히카리는 데이터 커넥션 풀, MySQl DB 에서 H2라는 임베디드 디비로 바꾸는 작업
+        HikariDataSource dataSource = new HikariDataSource();
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/testdb");
+        dataSource.setUsername("root");
+        dataSource.setPassword("12345678");
 
-        EmbeddedDatabase dataSource
-                = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
+//        EmbeddedDatabase dataSource
+//                = new EmbeddedDatabaseBuilder().setType(EmbeddedDatabaseType.H2).build();
 
         return dataSource;
     }
 
+    @Bean
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
+        return new JdbcTemplate(dataSource);
+    }
 
     public static void main(String[] args) {
         //TrainingRepository tr = new JdbcTrainingRepository();
@@ -55,7 +61,12 @@ public class TrainingApp {
      //   ApplicationContext context1= new AnnotationConfigApplicationContext(TrainingApp.class, ShoppingApp.class);
 ApplicationContext context = new AnnotationConfigApplicationContext(TrainingApp.class);
         TrainingService ts = context.getBean(TrainingService.class);
-        List<Training> trainings = ts.findAll();
+        //List<Training> trainings = ts.findAll();
+       // ts.findTitle("t01");
+        TrainingService trainingService = context.getBean(TrainingServiceImpl.class);
+       trainingService.findTitle("t01");
+
+
 
 
     }
