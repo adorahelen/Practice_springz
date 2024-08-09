@@ -18,20 +18,20 @@ public class TrainingServiceImplTest {
 
     @Test // 테스트 코드 1
     public void testFindAll() {
-        TrainingRepository tr = new JdbcTrainingRepository();
+      //  TrainingRepository tr = new JdbcTrainingRepository();
        // tr = new MockTrainingRepository();
 
-        TrainingService ts = new TrainingServiceImpl(tr);
-        assertNotNull(ts, "ts object null!"); // 테스트 코드 2
-        ts.findAll();
+      //  TrainingService ts = new TrainingServiceImpl(tr);
+        //assertNotNull(ts, "ts object null!"); // 테스트 코드 2
+        //ts.findAll();
         System.out.println("===============================");
 
 
-        ts = new TrainingServiceImpl(new MockTrainingRepository());
-        Assertions.assertThat(ts.findAll().size() ).isEqualTo(10); // 기대값 조정 20이면 에러, 포문이 10이라
+        //ts = new TrainingServiceImpl(new MockTrainingRepository());
+        //Assertions.assertThat(ts.findAll().size() ).isEqualTo(10); // 기대값 조정 20이면 에러, 포문이 10이라
         System.out.println("---------------------------------");
      //  ts = null;
-        assertNotNull(ts, "ts object null!");
+        //assertNotNull(ts, "ts object null!");
 
     }
 

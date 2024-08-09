@@ -22,6 +22,10 @@ public class TrainingApp {
     @Bean
     public DataSource dataSource() {
         HikariDataSource dataSource = new HikariDataSource();
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setJdbcUrl("jdbc:mysql://localhost:3306/testdb");
+        dataSource.setUsername("root");
+        dataSource.setPassword("12345678");
         return dataSource;
     }
 
@@ -44,6 +48,7 @@ public class TrainingApp {
 ApplicationContext context = new AnnotationConfigApplicationContext(TrainingApp.class);
         TrainingService ts = context.getBean(TrainingService.class);
         List<Training> trainings = ts.findAll();
+
 
     }
 }
