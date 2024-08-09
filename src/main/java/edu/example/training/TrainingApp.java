@@ -1,5 +1,6 @@
 package edu.example.training;
 
+import com.zaxxer.hikari.HikariDataSource;
 import edu.example.shopping.ShoppingApp;
 import edu.example.training.entity.Training;
 import edu.example.training.repository.JdbcTrainingRepository;
@@ -8,11 +9,9 @@ import edu.example.training.repository.TrainingRepository;
 import edu.example.training.service.TrainingService;
 import edu.example.training.service.TrainingServiceImpl;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.*;
 
+import javax.sql.DataSource;
 import java.util.List;
 
 // @Import(ShoppingApp.class)
@@ -20,6 +19,13 @@ import java.util.List;
 @ComponentScan // 현재 패키지 부터 하위 모든 패키지를 포함하여 스테레오타입 어노테이션 클래스의 객체를 찾아 빈으로 관리, 골뱅이들 읽어오려고
 // @ComponentScan("com.example.traing") // 경로를 지정하여 컴포넌트 스캔
 public class TrainingApp {
+    @Bean
+    public DataSource dataSource() {
+        HikariDataSource dataSource = new HikariDataSource();
+        return dataSource;
+    }
+
+
     public static void main(String[] args) {
         //TrainingRepository tr = new JdbcTrainingRepository();
           //                  tr = new MockTrainingRepository();
