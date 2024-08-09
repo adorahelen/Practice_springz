@@ -24,6 +24,13 @@
       * 즉 스프링에 내장된 서버를 사용하지 않는다면, 위에 나열된 서버를 설치하고 구성해야 한다. + JSP/서블릿 이용
     
 3. 스프링 프레임워크
+   - 스프링에서는 스프링 컨테이너(빈=객체)안에서 관리 : 제어의 역전
+      * 빈 등록 방법은 @Component, @Configuraion, (@SpringbootApplication은 안에 ComponentScan보유)
+      * @Bean은 메소드 대상 <-> @Component는 클래스 대상 (@Service,@Repository,@Controller, @Configuration,는 까보면 있음
+   - 컴포넌트 스캔으로 위에서 설정한 컴포넌트 안에 빈들을 읽어와, 상황에 맞게 관리 : 의존성 주입
+      * @Autowired : 필드, 생성자, setter메소드에 대해 스프링 컨테이너가 자동으로 빈 주입
+   - 요약정리 [컨테이너 안에서 빈을 관리한다. 빈을 주입하거나 빈을 생성하거나 삭제하거나 등 그떄 쓰이는게 @Component > @Bean, @Autowired]
+   
 4. JPA + 하이버네이트 ORM 등
 5. 스프링 시큐리티
 6. 기타
