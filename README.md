@@ -25,6 +25,8 @@
    - 웹 컨테이너 : 자바 EE 웹 어플리케이션은 자바EE application sever 또는 웹 컨테이너 == 서블릿 컨테이너에서 실행된다.
    - 아파치 톰캣(웹 컨테이너), 글래스피시, 제이보스 및 와일드플라이 등
       * 즉 스프링에 내장된 서버를 사용하지 않는다면, 위에 나열된 서버를 설치하고 구성해야 한다. + JSP/서블릿 이용
+        <img width="700" alt="image" src="https://github.com/user-attachments/assets/41b2a9f1-ec85-440b-b713-2495e591a43e">
+
     
 3. 스프링 프레임워크
    - 스프링에서는 스프링 컨테이너(빈=객체)안에서 관리 : 제어의 역전
@@ -37,7 +39,17 @@
 
    
 4. JPA + 하이버네이트 ORM 등
+   - H2 : 자바로 작성되어 있는 RDBMS이다. 인메모리 기반이라 재실행시 초기화 (개발시 테스트용)
+   - ORM : 자바의 객체와 데이터베이스를 연결하는 프로그래밍 기법 (object-relation-mapping) , DB value를 객체처럼
+         * SQL을 사용하지 않고, 자바 언어로만 데이터베이스에 접근해서 다루는 도구 -> ORM
+         * SQL Mapper(Mybatis, jdbcTemplate) / ORM(JPA, Hibernate)
+         * ORM 안에서, JPA는 인터페이스이고, Hibernate가 프레임워크
+     
+  <img width="700" alt="image" src="https://github.com/user-attachments/assets/61a6c6a0-5c67-432c-a7c3-e87981585879">
+  <img width="700" alt="image" src="https://github.com/user-attachments/assets/8a5a88ae-ba47-400c-a9ac-5134fa84faf3">
+
+     
+ 
 5. 스프링 시큐리티
-6. 기타
-      * Maven과 Gradle, 빌드툴, JAR과 WAR 배포 차이
+
    
