@@ -1,5 +1,7 @@
 # 스프링 공부
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/4de3a958-0604-40e6-8709-92fb61e0a7e9">
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/888ed7da-352d-4528-9026-9a8a5ec74a59">
+
 
 ## 목차 : 
    
@@ -30,9 +32,10 @@
       
    <img width="700" alt="image" src="https://github.com/user-attachments/assets/830124df-b21f-4025-a37c-b62ebf2bf9d9">
    <img width="700" alt="image" src="https://github.com/user-attachments/assets/8a4e99c0-790b-45b9-93ce-92c1e5fbd416">
+
+   - 제일 앞에서 들어오는 모든 요청을 받는 프론트 컨트롤러 == 디스패처 서블릿(스프링 자동)
    <img width="700" alt="image" src="https://github.com/user-attachments/assets/95b0b89b-6e81-4610-934d-7bde6cc0d108">
-
-
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/677c2466-4f8b-47d4-b243-bf64df96952c">
 
 
     
@@ -49,9 +52,9 @@
 4. JPA + 하이버네이트 ORM 등
    - H2 : 자바로 작성되어 있는 RDBMS이다. 인메모리 기반이라 재실행시 초기화 (개발시 테스트용)
    - ORM : 자바의 객체와 데이터베이스를 연결하는 프로그래밍 기법 (object-relation-mapping) , DB value를 객체처럼
-         * SQL을 사용하지 않고, 자바 언어로만 데이터베이스에 접근해서 다루는 도구 -> ORM
-         * SQL Mapper(Mybatis, jdbcTemplate) / ORM(JPA, Hibernate)
-         * ORM 안에서, JPA는 인터페이스이고, Hibernate가 프레임워크
+       * SQL을 사용하지 않고, 자바 언어로만 데이터베이스에 접근해서 다루는 도구 -> ORM
+       * SQL Mapper(Mybatis, jdbcTemplate) / ORM(JPA, Hibernate)
+       * ORM 안에서, JPA는 인터페이스이고, Hibernate가 프레임워크
      
   <img width="700" alt="image" src="https://github.com/user-attachments/assets/61a6c6a0-5c67-432c-a7c3-e87981585879">
   <img width="700" alt="image" src="https://github.com/user-attachments/assets/8a5a88ae-ba47-400c-a9ac-5134fa84faf3">
