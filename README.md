@@ -33,6 +33,8 @@
    - 컴포넌트 스캔으로 위에서 설정한 컴포넌트 안에 빈들을 읽어와, 상황에 맞게 관리 : 의존성 주입
       * @Autowired : 필드, 생성자, setter메소드에 대해 스프링 컨테이너가 자동으로 빈 주입
    - 요약정리 [컨테이너 안에서 빈을 관리한다. 빈을 주입하거나 빈을 생성하거나 삭제하거나 : Component > @Bean, @Autowired]
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/fe47bc50-e3d1-47a3-8970-8dfbe8957f5c">
+
    
 4. JPA + 하이버네이트 ORM 등
 5. 스프링 시큐리티
