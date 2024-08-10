@@ -16,7 +16,9 @@
    - 자바 EE 6 (2009년) : 엔터프라이즈 애플리케이션 기술 ["CDI 1.0"(자바 컨텍스트, 의존성 주입)] + Bean(빈)1.0, 어노테이션 기반 프로그래밍
    - 자바 EE 7 (2013년) : 웹소켓 API, JSON 처리용 자바 API
      * JDBC, try-catch-finally => try-with-resource [try(Connection connection = a.getConnection()),,,try + catch]
+       
    <img width="700" alt="image" src="https://github.com/user-attachments/assets/6b4bff2b-69de-45ca-803d-ff842fceccf0">
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/41b2a9f1-ec85-440b-b713-2495e591a43e">
 
 
 2. 자바 플랫폼&엔터프라이즈 애플리케이션
@@ -25,7 +27,13 @@
    - 웹 컨테이너 : 자바 EE 웹 어플리케이션은 자바EE application sever 또는 웹 컨테이너 == 서블릿 컨테이너에서 실행된다.
    - 아파치 톰캣(웹 컨테이너), 글래스피시, 제이보스 및 와일드플라이 등
       * 즉 스프링에 내장된 서버를 사용하지 않는다면, 위에 나열된 서버를 설치하고 구성해야 한다. + JSP/서블릿 이용
-        <img width="700" alt="image" src="https://github.com/user-attachments/assets/41b2a9f1-ec85-440b-b713-2495e591a43e">
+      
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/830124df-b21f-4025-a37c-b62ebf2bf9d9">
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/8a4e99c0-790b-45b9-93ce-92c1e5fbd416">
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/95b0b89b-6e81-4610-934d-7bde6cc0d108">
+
+
+
 
     
 3. 스프링 프레임워크
