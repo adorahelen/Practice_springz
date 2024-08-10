@@ -2,10 +2,8 @@
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/4de3a958-0604-40e6-8709-92fb61e0a7e9">
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/888ed7da-352d-4528-9026-9a8a5ec74a59">
 
-
-## 목차 : 
    
-1. 자바에 대한 간단한 역사(SE? EE?)
+## 1. 자바에 대한 간단한 역사(SE? EE?)
    - 1996년 JDK 1.0 출시 => 1998년 JS2E 1.2 => 2014년 SE 8
    - 1997년 서블릿 1.0 출시 => 1999년 J2EE 1.2 => 2013년 EE 7
    - SE (Java Standard Edition) : 가장 대중적인 자바 플랫폼(우리가 일반적으로 설치하는 JDK)
@@ -23,7 +21,7 @@
    <img width="700" alt="image" src="https://github.com/user-attachments/assets/41b2a9f1-ec85-440b-b713-2495e591a43e">
 
 
-2. 자바 플랫폼&엔터프라이즈 애플리케이션
+## 2. 자바 플랫폼&엔터프라이즈 애플리케이션
    - 서블릿 : 모든 자바 웹 애플리케이션의 핵심 컴포넌트로 HTTP 요청을 수신하고 응답하는 역할
    - JSP : HTML의 String을 직접 출력하는 작업 없이 인터페이스 만들 수 있음
    - 웹 컨테이너 : 자바 EE 웹 어플리케이션은 자바EE application sever 또는 웹 컨테이너 == 서블릿 컨테이너에서 실행된다.
@@ -39,7 +37,7 @@
 
 
     
-3. 스프링 프레임워크
+## 3. 스프링 프레임워크
    - 스프링에서는 스프링 컨테이너(빈=객체)안에서 관리 : 제어의 역전
       * 빈 등록 방법은 @Component, @Configuraion, (@SpringbootApplication은 안에 ComponentScan보유)
       * @Bean은 메소드 대상 <-> @Component는 클래스 대상 (@Service,@Repository,@Controller, @Configuration,는 까보면 있음
@@ -49,7 +47,7 @@
    <img width="700" alt="image" src="https://github.com/user-attachments/assets/fe47bc50-e3d1-47a3-8970-8dfbe8957f5c">
 
    
-4. JPA + 하이버네이트 ORM 등
+## 4. JPA + 하이버네이트 ORM 등
    - H2 : 자바로 작성되어 있는 RDBMS이다. 인메모리 기반이라 재실행시 초기화 (개발시 테스트용)
    - ORM : 자바의 객체와 데이터베이스를 연결하는 프로그래밍 기법 (object-relation-mapping) , DB value를 객체처럼
        * SQL을 사용하지 않고, 자바 언어로만 데이터베이스에 접근해서 다루는 도구 -> ORM
@@ -61,6 +59,6 @@
 
      
  
-5. 스프링 시큐리티
+## 5. 스프링 시큐리티
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/1bc2a1c1-5588-431a-ada2-dd05357a6e51">
 
-   
