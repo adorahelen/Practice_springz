@@ -1,5 +1,5 @@
 # 스프링 공부
-<img width="676" alt="image" src="https://github.com/user-attachments/assets/4de3a958-0604-40e6-8709-92fb61e0a7e9">
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/4de3a958-0604-40e6-8709-92fb61e0a7e9">
 
 ## 목차 : 
    
@@ -16,6 +16,8 @@
    - 자바 EE 6 (2009년) : 엔터프라이즈 애플리케이션 기술 ["CDI 1.0"(자바 컨텍스트, 의존성 주입)] + Bean(빈)1.0, 어노테이션 기반 프로그래밍
    - 자바 EE 7 (2013년) : 웹소켓 API, JSON 처리용 자바 API
      * JDBC, try-catch-finally => try-with-resource [try(Connection connection = a.getConnection()),,,try + catch]
+   <img width="700" alt="image" src="https://github.com/user-attachments/assets/6b4bff2b-69de-45ca-803d-ff842fceccf0">
+
 
 2. 자바 플랫폼&엔터프라이즈 애플리케이션
    - 서블릿 : 모든 자바 웹 애플리케이션의 핵심 컴포넌트로 HTTP 요청을 수신하고 응답하는 역할
