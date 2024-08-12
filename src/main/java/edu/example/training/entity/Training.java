@@ -1,9 +1,6 @@
 package edu.example.training.entity;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -13,6 +10,7 @@ import java.time.LocalTime;
 //@ToString
 //@Getter
 //@Setter
+@AllArgsConstructor
 @Data
 public class Training {
     private String id;
@@ -22,7 +20,16 @@ public class Training {
     private Integer reserved;
     private Integer capacity;
 
-//    public String getId() {
+//    public Training(String id, String title, LocalDateTime startDateTime, LocalDateTime endDateTime, Integer reserved, Integer capacity) {
+//        this.id = id;
+//        this.title = title;
+//        this.startDateTime = startDateTime;
+//        this.endDateTime = endDateTime;
+//        this.reserved = reserved;
+//        this.capacity = capacity;
+//    }
+
+    //    public String getId() {
 //        return id;
 //    }
 //

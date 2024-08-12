@@ -83,4 +83,9 @@ public class TrainingServiceImpl implements TrainingService{
         trainingRepository.selectTrainingList();
     }
 
+    @Override
+    public void insertTraining(Training training) {
+        trainingRepository.insert(training);
+    }
+
 }

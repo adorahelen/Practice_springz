@@ -16,6 +16,7 @@ import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 
 import javax.sql.DataSource;
+import java.time.LocalDateTime;
 import java.util.List;
 
 // @Import(ShoppingApp.class)
@@ -72,7 +73,14 @@ public class TrainingApp {
 //       trainingService.getTrainingMap("t01");
 //       trainingService.getTrainingMapList();
       // trainingService.selectTraining("t01");
+
+        Training training = new Training("t04", "Spring 교육",
+                LocalDateTime.of(2024, 7, 4, 9, 30, 00),
+                LocalDateTime.of(2024, 7, 7, 17, 00, 00),
+                0, 8);
+
        trainingService.selectTrainingAll();
+       // trainingService.insertTraining(training);
 
 //        for (String bean : context.getBeanDefinitionNames()) {
 //            System.out.println(bean);

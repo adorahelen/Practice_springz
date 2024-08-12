@@ -116,6 +116,30 @@ public class JdbcTrainingRepository implements TrainingRepository {
     }
 
     @Override
+    public void insert(Training training) {
+        int result = jdbcTemplate.update(
+                " INSERT INTO training Values(?, ?, ?, ?, ?, ?) ",
+                training.getId(),
+                training.getTitle(),
+                training.getStartDateTime(),
+                training.getEndDateTime(),
+                training.getReserved(),
+                training.getCapacity() );
+        System.out.println(result == 1 ? "inserted OK " : " NOT inserted");
+
+    }
+
+    @Override
+    public void update(Training training) {
+
+    }
+
+    @Override
+    public void delete(String id) {
+
+    }
+
+    @Override
     public void selectTrainingMapList() {
         List< Map<String, Object> > result = jdbcTemplate.queryForList(
                 "select * from training ");
