@@ -54,6 +54,15 @@
             <version>3.2.3</version> <!-- 여기에 적절한 버전을 확인하세요 -->
             <scope>test</scope>
         </dependency>
+
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.34</version>
+            <scope>provided</scope>
+        </dependency>
+
     </dependencies>
 
     <properties>
