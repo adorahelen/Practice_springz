@@ -18,6 +18,8 @@ public interface TrainingService {
     void selectTraining(String id);
     void selectTrainingAll();
     void insertTraining(Training training);
+    void updateTraining(Training training);
+    void deleteTraining(String id);
 
 }
 

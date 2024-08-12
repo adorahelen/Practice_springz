@@ -74,13 +74,16 @@ public class TrainingApp {
 //       trainingService.getTrainingMapList();
       // trainingService.selectTraining("t01");
 
-        Training training = new Training("t04", "Spring 교육",
+        Training training = new Training("t04", "스프링 교육",
                 LocalDateTime.of(2024, 7, 4, 9, 30, 00),
                 LocalDateTime.of(2024, 7, 7, 17, 00, 00),
-                0, 8);
+                0, 5);
 
        trainingService.selectTrainingAll();
+       // trainingService.deleteTraining("t04");
+        trainingService.updateTraining(training);
        // trainingService.insertTraining(training);
+        // 스프링 교육 과 캐퍼서티 5로 바꾸고 삭제하기
 
 //        for (String bean : context.getBeanDefinitionNames()) {
 //            System.out.println(bean);

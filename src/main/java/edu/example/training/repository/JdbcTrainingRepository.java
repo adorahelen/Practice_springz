@@ -131,11 +131,23 @@ public class JdbcTrainingRepository implements TrainingRepository {
 
     @Override
     public void update(Training training) {
+        int result = jdbcTemplate.update(
+                "UPDATE training SET title = ?, capacity = ? WHERE id = ?"
+                // 아래에 바인딩을 까먹지 말자
+                , training.getTitle(),  training.getCapacity() ,training.getId()
+        );
+
+
+        System.out.println(result == 1 ? "Update OK " : " NOT Update");
 
     }
 
     @Override
     public void delete(String id) {
+        int result = jdbcTemplate.update(
+                " DELETE FROM  training WHERE id = ? " , id);
+        System.out.println(result == 1 ? "Delete OK " : " NOT Deleted");
+
 
     }
 

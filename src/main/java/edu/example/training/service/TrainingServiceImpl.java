@@ -88,4 +88,15 @@ public class TrainingServiceImpl implements TrainingService{
         trainingRepository.insert(training);
     }
 
+    @Override
+    public void updateTraining(Training training) {
+        trainingRepository.update(training);
+    }
+
+    @Override
+    public void deleteTraining(String id) {
+        trainingRepository.delete(id);
+
+    }
+
 }
