@@ -1,4 +1,4 @@
-//package edu.example.training.repository;
+package edu.example.sample;//package edu.example.training.repository;
 //
 //import edu.example.training.entity.Training;
 //
