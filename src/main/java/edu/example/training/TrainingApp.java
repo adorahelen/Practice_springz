@@ -40,9 +40,7 @@ public class TrainingApp {
     }
 
     @Bean
-    public JdbcTemplate jdbcTemplate(DataSource dataSource) {
-        return new JdbcTemplate(dataSource);
-    }
+    public JdbcTemplate jdbcTemplate(DataSource dataSource) {return new JdbcTemplate(dataSource);}
 
     public static void main(String[] args) {
         //TrainingRepository tr = new JdbcTrainingRepository();
@@ -59,11 +57,14 @@ public class TrainingApp {
       //  System.setProperty("spring.profiles.active", "production");
 
      //   ApplicationContext context1= new AnnotationConfigApplicationContext(TrainingApp.class, ShoppingApp.class);
-ApplicationContext context = new AnnotationConfigApplicationContext(TrainingApp.class);
-        TrainingService ts = context.getBean(TrainingService.class);
+//ApplicationContext context = new AnnotationConfigApplicationContext(TrainingApp.class);
+      //  TrainingService ts = context.getBean(TrainingService.class);
         //List<Training> trainings = ts.findAll();
        // ts.findTitle("t01");
+        ApplicationContext context = new AnnotationConfigApplicationContext(TrainingApp.class);
         TrainingService trainingService = context.getBean(TrainingServiceImpl.class);
+       // trainingService.findTitle("t01");
+       trainingService.findTitle("t02", "자바 교육");
        trainingService.findTitle("t01");
 
 

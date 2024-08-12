@@ -10,5 +10,6 @@ public interface TrainingService {
     List<Training> findAll();
 
     void findTitle(String id);
+    void findTitle(String id, String title);
 }
 

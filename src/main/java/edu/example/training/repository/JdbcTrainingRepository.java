@@ -18,8 +18,8 @@ public class JdbcTrainingRepository implements TrainingRepository {
     // JVM 환경설정안에 프로파일 지정으로 해결하거나
     // OS 환경변수에 프로파일을 지정해서 해결 할 수 있다.
 
-    // private final DataSource dataSource;
-    private JdbcTemplate jdbcTemplate;
+    // private final DataSource dataSource; 데이터 소스 빈
+    private JdbcTemplate jdbcTemplate; // 제이디비씨 템플릿 빈ㄴ
 
     public JdbcTrainingRepository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -43,6 +43,16 @@ public class JdbcTrainingRepository implements TrainingRepository {
     }
 
     @Override
+    public void selectTitle(String id, String title) {
+        String result = jdbcTemplate.queryForObject(
+                "select title from training where id = ? AND title = ? ",
+                String.class, id, title);
+        System.out.println("id: " + id);
+        System.out.println("title: " + result);
+
+    }
+
+    @Override
     public List<Training> selectAll() {
         System.out.println("DB에서 데이터 가져오기 --------");
 
@@ -57,4 +67,6 @@ public class JdbcTrainingRepository implements TrainingRepository {
 
         return List.of();
     }
+
+
 }

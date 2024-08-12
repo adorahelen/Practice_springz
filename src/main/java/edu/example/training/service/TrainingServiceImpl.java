@@ -41,4 +41,10 @@ public class TrainingServiceImpl implements TrainingService{
         trainingRepository.selectTitle(id);
 
     }
+
+    @Override
+    public void findTitle(String id, String title) {
+        trainingRepository.selectTitle(id, title);
+
+    }
 }

@@ -9,7 +9,7 @@ public interface TrainingRepository {
 
 
     void selectTitle(String title);
-//    void selectTitle(String id, String title);  //여러 컬럼     "
+    void selectTitle(String id, String title);  //여러 컬럼     "
 //    void selectStart(String id);                //날짜         "
 //    void selectCount();                         //숫자         "
 //
