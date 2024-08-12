@@ -1,14 +1,13 @@
 package edu.example.training;
 
 import com.zaxxer.hikari.HikariDataSource;
-import edu.example.training.entity.Training;
 import edu.example.training.service.TrainingService;
 import edu.example.training.service.TrainingServiceImpl;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.jdbc.core.JdbcTemplate;
 import javax.sql.DataSource;
-import java.time.LocalDateTime;
+
 
 
 
@@ -35,15 +34,6 @@ public class TrainingApp {
         TrainingService trainingService = context.getBean(TrainingServiceImpl.class);
 
 
-        Training training = new Training("t04", "스프링 교육",
-                LocalDateTime.of(2024, 7, 4, 9, 30, 00),
-                LocalDateTime.of(2024, 7, 7, 17, 00, 00),
-                0, 5);
-
-        // trainingService.selectTrainingAll();
-       // trainingService.deleteTraining("t04");
-       // trainingService.updateTraining(training);
-       // trainingService.insertTraining(training);
 
     }
 }
