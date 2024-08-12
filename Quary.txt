@@ -33,3 +33,22 @@ CREATE TABLE Reservation (
     FOREIGN KEY (trainingId) REFERENCES Training(id),
     FOREIGN KEY (studentTypeId) REFERENCES StudentType(id)
 );
+
+
+-- StudentType 테이블 이름 변경
+ALTER TABLE StudentType RENAME TO student_types;
+
+-- Reservation 테이블 이름 변경
+ALTER TABLE Reservation RENAME TO reservation;
+
+
+INSERT INTO student_types (id, code, name)
+VALUES
+('st01', 'EMPLOYEE', '직장인'),
+('st02', 'STUDENT', '학생'),
+('st03', 'FREELANCE', '프리랜서');
+
+INSERT INTO reservation (id, trainingId, studentTypeId, reservationDateTime, name, phone, emailAddress)
+VALUES
+('r01', 't01', 'st01', '2023-07-21 00:00:00', '김철수', '090-0000-0000', 'taro@example.com'),
+('r02', 't01', 'st03', '2023-07-20 00:00:00', '한빛나', '080-0000-0000', 'jiro@example.com');                                                                              ('r01', 't01', 'st01', '2023-07-21 00:00:00', '김철수', '090-0000-0000', 'taro@example.com'),
