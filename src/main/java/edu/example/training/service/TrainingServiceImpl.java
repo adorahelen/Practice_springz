@@ -17,15 +17,15 @@ public class TrainingServiceImpl implements TrainingService{
     @Autowired // 여기다 필드를 썼으니 인젝션 해줘
     private TrainingRepository trainingRepository;
 
-    @Autowired // 생성자 인젝션  // 생성자 하나 일떼는 생략 가능
-    public TrainingServiceImpl(TrainingRepository trainingRepository) {
-        this.trainingRepository = trainingRepository;
-    } // 이런 식으로 객체 생성 후 넘기는 작업을 빈이라고 하고, 이걸 스프링이 대신 진행하게 될 것이다. DI
-
-    @Autowired // 세터 인젝션
-    public void setTrainingRepository(TrainingRepository trainingRepository) {
-        this.trainingRepository = trainingRepository;
-    }
+//    @Autowired // 생성자 인젝션  // 생성자 하나 일떼는 생략 가능
+//    public TrainingServiceImpl(TrainingRepository trainingRepository) {
+//        this.trainingRepository = trainingRepository;
+//    } // 이런 식으로 객체 생성 후 넘기는 작업을 빈이라고 하고, 이걸 스프링이 대신 진행하게 될 것이다. DI
+//
+//    @Autowired // 세터 인젝션
+//    public void setTrainingRepository(TrainingRepository trainingRepository) {
+//        this.trainingRepository = trainingRepository;
+//    }
 
     @Override
     public List<Training> findAll() {// 아래에 있는 강한 결합을 낮추기 위해서 (코드 일일이 고쳐야 하는)
@@ -47,4 +47,35 @@ public class TrainingServiceImpl implements TrainingService{
         trainingRepository.selectTitle(id, title);
 
     }
+
+    @Override
+    public void findLocalDateTime(String id) {
+        trainingRepository.selectStart(id);
+    }
+
+    @Override
+    public void totalCount() {
+        trainingRepository.selectCount();
+    }
+
+    @Override
+    public void findReserved() {
+        trainingRepository.selectReserveds();
+    }
+
+    @Override
+    public void getTrainingMap(String id) {
+        trainingRepository.selectTrainingMap(id);
+    }
+
+    @Override
+    public void getTrainingMapList() {
+        trainingRepository.selectTrainingMapList();
+    }
+
+    @Override
+    public void selectTraining(String id) {
+        trainingRepository.selectTraining(id);
+    }
+
 }

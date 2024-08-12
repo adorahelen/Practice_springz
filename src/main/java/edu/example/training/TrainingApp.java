@@ -64,11 +64,29 @@ public class TrainingApp {
         ApplicationContext context = new AnnotationConfigApplicationContext(TrainingApp.class);
         TrainingService trainingService = context.getBean(TrainingServiceImpl.class);
        // trainingService.findTitle("t01");
-       trainingService.findTitle("t02", "자바 교육");
-       trainingService.findTitle("t01");
+//       trainingService.findTitle("t02", "자바 교육");
+//       trainingService.findTitle("t01");
+//       trainingService.findLocalDateTime("t01");
+//       trainingService.totalCount();
+//       trainingService.findReserved();
+//       trainingService.getTrainingMap("t01");
+//       trainingService.getTrainingMapList();
+       trainingService.selectTraining("t01");
 
-
-
+//        for (String bean : context.getBeanDefinitionNames()) {
+//            System.out.println(bean);
+//        }
+/*org.springframework.context.annotation.internalConfigurationAnnotationProcessor
+org.springframework.context.annotation.internalAutowiredAnnotationProcessor
+org.springframework.context.annotation.internalCommonAnnotationProcessor
+org.springframework.context.event.internalEventListenerProcessor
+org.springframework.context.event.internalEventListenerFactory
+trainingApp
+jdbcTrainingRepository
+trainingServiceImpl
+dataSource
+jdbcTemplate
+* */
 
     }
 }

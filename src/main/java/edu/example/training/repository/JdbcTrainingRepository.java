@@ -2,6 +2,7 @@ package edu.example.training.repository;
 
 import edu.example.training.entity.Training;
 import org.springframework.context.annotation.Profile;
+import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -9,7 +10,9 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 // @Profile("staging")
@@ -50,6 +53,64 @@ public class JdbcTrainingRepository implements TrainingRepository {
         System.out.println("id: " + id);
         System.out.println("title: " + result);
 
+    }
+
+    @Override
+    public void selectStart(String id) {
+        LocalDateTime result = jdbcTemplate.queryForObject(
+                "select start_date_time from training where id = ? ",
+                LocalDateTime.class, id);
+
+        System.out.println("startDateTime: " + result);
+
+    }
+
+    @Override
+    public void selectCount() {
+        Integer result = jdbcTemplate.queryForObject(
+                "select COUNT(*) FROM training ", Integer.class);
+
+        System.out.println("count: " + result);
+    }
+
+    @Override
+    public void selectReserveds() {
+        List<Integer> result = jdbcTemplate.queryForList(
+                    "select reserved FROM training ", Integer.class);
+        for (Integer i : result) {
+            System.out.println("reserved: " + i);
+        }
+    }
+
+    @Override
+    public void selectTrainingMap(String id) {
+        Map<String, Object> result = jdbcTemplate.queryForMap(
+                "select * from training where id = ?", id);
+
+        result.forEach(( k, v) -> System.out.println("key: " + k + " value: " + v));
+    }
+
+    @Override
+    public void selectTrainingMapList() {
+        List< Map<String, Object> > result = jdbcTemplate.queryForList(
+                "select * from training ");
+
+        result.forEach(System.out::println);
+    }
+
+    @Override
+    public void selectTraining(String id) {
+        Training result = jdbcTemplate.queryForObject(
+                "select * from training where id = ? ",
+                new DataClassRowMapper<>(Training.class), id);
+                //Training.class, id);
+
+        System.out.println("id: " + result);
+//        System.out.println("title: " + result.getTitle());
+//        System.out.println("startDateTime: " + result.getStartDateTime());
+//        System.out.println("endDateTime: " + result.getEndDateTime());
+//        System.out.println("reserved: " + result.getReserved());
+//        System.out.println("capacity: " + result.getCapacity());
     }
 
     @Override

@@ -60,4 +60,16 @@ public class Training {
     public void setCapacity(Integer capacity) {
         this.capacity = capacity;
     }
+
+    @Override
+    public String toString() {
+        return "Training{" +
+                "id='" + id + '\'' +
+                ", title='" + title + '\'' +
+                ", startDateTime=" + startDateTime +
+                ", endDateTime=" + endDateTime +
+                ", reserved=" + reserved +
+                ", capacity=" + capacity +
+                '}';
+    }
 }
