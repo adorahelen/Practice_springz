@@ -90,13 +90,7 @@ public class JdbcTrainingRepository implements TrainingRepository {
         result.forEach(( k, v) -> System.out.println("key: " + k + " value: " + v));
     }
 
-    @Override
-    public void selectTrainingMapList() {
-        List< Map<String, Object> > result = jdbcTemplate.queryForList(
-                "select * from training ");
 
-        result.forEach(System.out::println);
-    }
 
     @Override
     public void selectTraining(String id) {
@@ -111,6 +105,22 @@ public class JdbcTrainingRepository implements TrainingRepository {
 //        System.out.println("endDateTime: " + result.getEndDateTime());
 //        System.out.println("reserved: " + result.getReserved());
 //        System.out.println("capacity: " + result.getCapacity());
+    }
+
+    @Override
+    public void selectTrainingList() {
+        List<Training> result = jdbcTemplate.query(
+                "Select * from training ",
+                new DataClassRowMapper<>(Training.class));
+        result.forEach(System.out::println);
+    }
+
+    @Override
+    public void selectTrainingMapList() {
+        List< Map<String, Object> > result = jdbcTemplate.queryForList(
+                "select * from training ");
+
+        result.forEach(System.out::println);
     }
 
     @Override

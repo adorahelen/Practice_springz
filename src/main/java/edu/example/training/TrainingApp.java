@@ -71,7 +71,8 @@ public class TrainingApp {
 //       trainingService.findReserved();
 //       trainingService.getTrainingMap("t01");
 //       trainingService.getTrainingMapList();
-       trainingService.selectTraining("t01");
+      // trainingService.selectTraining("t01");
+       trainingService.selectTrainingAll();
 
 //        for (String bean : context.getBeanDefinitionNames()) {
 //            System.out.println(bean);

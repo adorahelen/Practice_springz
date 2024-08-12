@@ -78,4 +78,9 @@ public class TrainingServiceImpl implements TrainingService{
         trainingRepository.selectTraining(id);
     }
 
+    @Override
+    public void selectTrainingAll() {
+        trainingRepository.selectTrainingList();
+    }
+
 }

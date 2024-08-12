@@ -1,5 +1,6 @@
 package edu.example.training.entity;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -8,10 +9,11 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
-// 수강 신청 관련 - 강의 데이터를 갖는, Entity 클래스 - VO
-@ToString
-@Getter
-@Setter
+//// 수강 신청 관련 - 강의 데이터를 갖는, Entity 클래스 - VO
+//@ToString
+//@Getter
+//@Setter
+@Data
 public class Training {
     private String id;
     private String title;

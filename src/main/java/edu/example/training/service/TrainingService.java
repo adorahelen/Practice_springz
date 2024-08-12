@@ -16,5 +16,6 @@ public interface TrainingService {
     void getTrainingMap(String id);
     void getTrainingMapList();
     void selectTraining(String id);
+    void selectTrainingAll();
 }
 

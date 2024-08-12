@@ -16,5 +16,5 @@ public interface TrainingRepository {
     void selectTrainingMapList();       //여러 레코드 Map을 List로 가져오기
 //
     void selectTraining(String id);     //레코드를 Entity 객체로 가져오기
-//    void selectTrainingList();          //레코드 Entity를 List로 가져오기
+    void selectTrainingList();          //레코드 Entity를 List로 가져오기
 }
