@@ -7,7 +7,7 @@ import lombok.Data;
 @Data
 public class ReservationInput {
     private String trainingId;
-    private String studentTypeId;
+    private String studentTypeCode;
     private String name;
     private String phone;
     private String emailAddress;
