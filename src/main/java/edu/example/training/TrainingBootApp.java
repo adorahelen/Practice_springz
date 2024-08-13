@@ -28,7 +28,7 @@ public class TrainingBootApp {
                 = SpringApplication.run(TrainingBootApp.class);
 
         ReservationService reservationService
-                = (ReservationService) context.getBean(ReservationService.class);
+                = context.getBean(ReservationService.class);
 
         // Reserve Object
         ReservationInput reservationInput = new ReservationInput();
