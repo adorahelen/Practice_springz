@@ -4,14 +4,10 @@ import com.zaxxer.hikari.HikariDataSource;
 import edu.example.training.entity.Reservation;
 import edu.example.training.input.ReservationInput;
 import edu.example.training.service.ReservationService;
-import edu.example.training.service.TrainingService;
-import edu.example.training.service.TrainingServiceImpl;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.*;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.support.JdbcTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -49,22 +45,22 @@ public class TrainingApp {
         ApplicationContext context
                 = new AnnotationConfigApplicationContext(TrainingApp.class);
 
-        ReservationService rs
+        ReservationService reservationService
                 = (ReservationService) context.getBean(ReservationService.class);
 
         ((Logger) LoggerFactory.getLogger( JdbcTransactionManager.class )).setLevel(Level.DEBUG);
 
         // Reserve Object
         ReservationInput reservationInput = new ReservationInput();
-        reservationInput.setTrainingId("t01");
+        reservationInput.setTrainingId("t03");
         reservationInput.setName("KIM LEE PARK");
         reservationInput.setPhone("010-1234-1234");
         reservationInput.setEmailAddress("asd@asd");
         reservationInput.setStudentTypeCode("FREELANCE");
 
 
-        Reservation r = rs.reserve(reservationInput);
-        System.out.println("Reserve ID " + r.getId());
+        Reservation reservation = reservationService.reserve(reservationInput);
+        System.out.println("Reserve ID " + reservation.getId());
 
 
     }
