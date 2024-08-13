@@ -23,25 +23,21 @@ public class JdbcTrainingRepository implements TrainingRepository {
         return result;
     }
 
-//    @Override
-//    public boolean update(Training training) {
-//        int result = jdbcTemplate.update(
-//                """
-//UPDATE training SET title = ?, description = ?, start_date = ?, end_date = ?
-//                , reserved = ?, capacity = ?  WHERE id = ?""",
-//                training.getTitle(),
-//                //    public void update(Training training) {
-//        int result = jdbcTemplate.update(
-//                "UPDATE training SET title = ?, capacity = ? WHERE id = ?"
-//                // 아래에 바인딩을 까먹지 말자
-//                , training.getTitle(),  training.getCapacity() ,training.getId()
-//        );
-//
-//
-//        System.out.println(result == 1 ? "Update OK " : " NOT Update");
-//
-//    }
+    @Override
+    public boolean update(Training training) {
+        int result = jdbcTemplate.update(
+                """
+                UPDATE training SET title = ?, start_date = ?, end_date = ?,
+                reserved = ?, capacity = ? WHERE id = ?
+                """,
+                training.getTitle(),
+                training.getStartDateTime(),
+                training.getEndDateTime(),
+                training.getReserved(),
+                training.getCapacity(),
+                training.getId()
+        );
 
-//        )
-//    }
+        return result > 0; // Return true if at least one row was updated, false otherwise
+    }
 }
