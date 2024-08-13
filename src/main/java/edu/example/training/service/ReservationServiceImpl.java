@@ -9,10 +9,12 @@ import edu.example.training.repository.StudentTypeRepository;
 import edu.example.training.repository.TrainingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
 @Service
+@Transactional
 public class ReservationServiceImpl implements ReservationService {
 
     private TrainingRepository trainingRepository;
