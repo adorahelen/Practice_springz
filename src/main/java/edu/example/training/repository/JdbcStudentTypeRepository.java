@@ -3,7 +3,9 @@ package edu.example.training.repository;
 import edu.example.training.entity.StudentType;
 import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class JdbcStudentTypeRepository implements StudentTypeRepository {
     private final JdbcTemplate jdbcTemplate;
     public JdbcStudentTypeRepository(JdbcTemplate jdbcTemplate) {
