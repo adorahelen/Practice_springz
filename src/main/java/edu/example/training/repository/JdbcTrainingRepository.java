@@ -27,7 +27,7 @@ public class JdbcTrainingRepository implements TrainingRepository {
     public boolean update(Training training) {
         int result = jdbcTemplate.update(
                 """
-                UPDATE training SET title = ?, start_date = ?, end_date = ?,
+                UPDATE training SET title = ?, start_date_time = ?, end_date_time = ?,
                 reserved = ?, capacity = ? WHERE id = ?
                 """,
                 training.getTitle(),

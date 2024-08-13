@@ -13,9 +13,9 @@ public class JdbcReservationRepository implements ReservationRepository{
 
     @Override
     public boolean insert(Reservation reservation) {
-        int result = jdbcTemplate.update("INSERT INTO traing VALUES(?, ?, ?, NOW(), ?, ?, ?)",
+        int result = jdbcTemplate.update("INSERT INTO Reservation VALUES(?, ?, ?, NOW(), ?, ?, ?)",
                 reservation.getId(),
-                reservation.getTraining(),
+                reservation.getTrainingId(),
                 reservation.getStudentTypeId(),
                 reservation.getName(),
                 reservation.getPhone(),

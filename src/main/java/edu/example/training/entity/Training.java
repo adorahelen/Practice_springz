@@ -14,6 +14,6 @@ public class Training {
     private Integer reserved;
     private Integer capacity;
 
-    private List<Reservation> reservations;
+   // private List<Reservation> reservations;
 
 }
