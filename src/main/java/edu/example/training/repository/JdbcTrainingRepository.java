@@ -5,6 +5,7 @@ import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 
 
 @Repository
@@ -40,4 +41,17 @@ public class JdbcTrainingRepository implements TrainingRepository {
 
         return result > 0; // Return true if at least one row was updated, false otherwise
     }
+
+    // 여기가 문제인데 jpa쓰면,쿼리를 쓸 필요가 없다. 다만 컨트롤러나 서비스 작업이 추가 될?
+    @Override
+    public List<Training> selectList() {
+        return jdbcTemplate.query(
+                " Select * from training ORDER BY id",
+                new DataClassRowMapper<>(Training.class)
+        );
+    }
+
+
+
+
 }

@@ -2,6 +2,7 @@ package edu.example.training.service;
 
 
 
+import edu.example.training.entity.Training;
 import edu.example.training.repository.TrainingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,15 @@ public class TrainingServiceImpl implements TrainingService{
     }
 
 
+    @Override
+    public Training findById(String trainingId) {
+        return trainingRepository.selectById(trainingId);
     }
+
+    @Override
+    public List<Training> findList() {
+        return trainingRepository.selectList();
+    }
+}
 
 
