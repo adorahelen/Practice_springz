@@ -7,8 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
+@RequestMapping("/catalog") // 대표 맵핑 지정 , 클래스 전체에 적용
 public class CatalogController {
-    @RequestMapping(path = "/catalog/abc", method = RequestMethod.GET)
+    //@RequestMapping(path = "/catalog/abc", method = RequestMethod.GET)
+    @RequestMapping(path = "/abc", method = RequestMethod.GET)
     public String abc() {
         System.out.println("===CatalogController: abc IS oK===");
         return "abc";
@@ -20,12 +22,12 @@ public class CatalogController {
 //        return "xyz";
 //    } 리퀘스트 매핑 쓰다가 겟 메핑이 만들어짐
 
-    @GetMapping("/catalog/xyz")// view only
+    @GetMapping("/xyz")// view only
     public String xyz() {
         System.out.println("===CatalogController: xyz IS oK===");
         return "xyz";
     }
-    @PostMapping ("/catalog/xyz") // prove
+    @PostMapping ("/xyz") // prove
     public String xyzPost() {
         System.out.println("===CatalogController: xyzPost IS oK===");
         return "xyz";
