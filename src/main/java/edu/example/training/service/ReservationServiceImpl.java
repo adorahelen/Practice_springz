@@ -29,6 +29,7 @@ public class ReservationServiceImpl implements ReservationService {
         this.trainingRepository = trainingRepository;
         this.studentTypeRepository = studentTypeRepository;
         this.reservationRepository = repository;
+        System.out.println("Reservation Service created");
     }
 
 

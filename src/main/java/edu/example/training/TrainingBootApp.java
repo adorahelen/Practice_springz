@@ -27,21 +27,6 @@ public class TrainingBootApp {
         ApplicationContext context
                 = SpringApplication.run(TrainingBootApp.class);
 
-        ReservationService reservationService
-                = context.getBean(ReservationService.class);
-
-        // Reserve Object
-        ReservationInput reservationInput = new ReservationInput();
-        reservationInput.setTrainingId("t01");
-        reservationInput.setName("KIM LEE PARK");
-        reservationInput.setPhone("010-1234-1234");
-        reservationInput.setEmailAddress("asd@asd");
-        reservationInput.setStudentTypeCode("FREELANCE");
-
-
-        Reservation reservation = reservationService.reserve(reservationInput);
-        System.out.println("Reserve ID " + reservation.getId());
-
 
     }
 }
