@@ -11,4 +11,6 @@ public interface ReservationService {
 
     public List<StudentType> getStudentTypes();
 
+
+    Reservation reserve(ReservationInput reservationInput);
 }
