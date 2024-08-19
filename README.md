@@ -72,6 +72,14 @@
     * return 객체(REST API인 경우) || 스트링(View-html파일)
 - @Data(엔티티, DTO) : 게터,세터, 투스트링 대체
 - @RequiredArgsConstructor : 필요한 생성자 대체 (레포지토리,컨트롤러)
-- @AllArgsConstructor : 모든 생성자 대체 (서비스)
+- @AllArgsConstructor : 모든 생성자 대체 (서비스, 엔티티)
 - etc [@Override,@Autowired, @Service, @Repository]
-       
+- @Transactional : 트랜잭션처리, 여기서는 수강예약(ReservationServiceImpl)
+- @Controller : 일반, 뷰파일 반환
+    * @GetMapping("/display-List") : 이건 RestAPI와 동일함
+    * public String 함수이름아무거나(Model model <-뷰에 추가시키기 위한)
+    * return "training/trainingList"; : 반환할 뷰 파일 
+
+
+
+
