@@ -3,6 +3,7 @@ package edu.example.training.controller;
 import edu.example.training.entity.Reservation;
 import edu.example.training.entity.StudentType;
 import edu.example.training.entity.Training;
+import edu.example.training.exception.CapacityOverException;
 import edu.example.training.input.ReservationInput;
 import edu.example.training.service.ReservationService;
 import edu.example.training.service.TrainingService;
@@ -78,6 +79,11 @@ public class ReservationController {
         List<StudentType> studentTypes = reservationService.getStudentTypes();
         model.addAttribute("studentTypeList", studentTypes);
         return "reservation/reservationForm";
+    }
+
+    @ExceptionHandler(CapacityOverException.class)
+    public String handleCapacityOverException(Model model) {
+        return "reservation/capacityOver";
     }
 
 
