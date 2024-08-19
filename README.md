@@ -62,3 +62,7 @@
 ## 5. 스프링 시큐리티
    <img width="700" alt="image" src="https://github.com/user-attachments/assets/1bc2a1c1-5588-431a-ada2-dd05357a6e51">
 
+## 6. 어노테이션
+- @SpringBootApplication : 메인함수가 존재하는 클래스 위에 붙인다, 시작점
+- @RestController : REST API 컨트롤러 태크, JSON형식으로 데이터 반환
+- @Request
