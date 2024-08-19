@@ -29,7 +29,13 @@ public class ReservationController {
         this.reservationService = reservationService;
         this.trainingService = trainingService;
     }
-
+    //	•	    @RequestParam:
+//        •	URL의 쿼리 파라미터(?key=value)나 POST 폼 데이터에서 값을 추출합니다.
+//        •	주로 필터링, 페이징, 검색 등의 작업에 사용됩니다.
+//	•	기본값 설정 및 필수 여부를 지정할 수 있습니다.
+//        •	@PathVariable:
+//        •	URL 경로의 일부를 변수로 추출하여 사용합니다.
+//        •	RESTful API 설계에서 자주 사용되며, 리소스 식별에 유용합니다.
     @GetMapping("/display-form")
     public String displayForm(@RequestParam String trainingId, Model model) {
         System.out.println("reservation form ok");
@@ -76,6 +82,7 @@ public class ReservationController {
     @PostMapping(value = "/reserve", params = "correct") // 신청 내용 변경
     public String correctInput(@Validated ReservationInput reservationInput,
                                 Model model) {
+        // @validated 유효값 검증
         List<StudentType> studentTypes = reservationService.getStudentTypes();
         model.addAttribute("studentTypeList", studentTypes);
         return "reservation/reservationForm";
