@@ -2,7 +2,6 @@ package edu.example.training.controller;
 
 import edu.example.training.entity.Training;
 import edu.example.training.service.TrainingService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,7 +23,6 @@ public class TrainingController {
 
     @GetMapping("/display-details")
     public String displayDetails(@RequestParam String trainingId, Model model) {
-       // System.out.println("TrainingController display-details" + trainingId);
 
         Training training= trainingService.findById(trainingId);
         model.addAttribute("training", training);
