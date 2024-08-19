@@ -65,4 +65,13 @@
 ## 6. 어노테이션
 - @SpringBootApplication : 메인함수가 존재하는 클래스 위에 붙인다, 시작점
 - @RestController : REST API 컨트롤러 태크, JSON형식으로 데이터 반환
-- @Request
+- @RequestMapping : ("안에 자주 사용하는 URL명시, 전체작용")
+    * @RequestMapping("/api/products")
+- @Get/POST/PUT&PATCH/DeleteMapping : CRUD
+    * @GetMapping("/{id}"),  @GetMapping
+    * return 객체(REST API인 경우) || 스트링(View-html파일)
+- @Data(엔티티, DTO) : 게터,세터, 투스트링 대체
+- @RequiredArgsConstructor : 필요한 생성자 대체 (레포지토리,컨트롤러)
+- @AllArgsConstructor : 모든 생성자 대체 (서비스)
+- etc [@Override,@Autowired, @Service, @Repository]
+       
