@@ -79,21 +79,24 @@
     * @GetMapping("/display-List") : 이건 RestAPI와 동일함
     * public String 함수이름아무거나(Model model <-뷰에 추가시키기 위한)
     * return "training/trainingList"; : 반환할 뷰 파일  
+
+## 7. 핵심
 - 뷰를 반환(HTML)
-   <img width="700" alt="image" src="https://github.com/user-attachments/assets/f36f8fef-3782-446d-bd31-8eeb4d777076">
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/f36f8fef-3782-446d-bd31-8eeb4d777076">
 - JSON 데이터를 반환(REST API)
-   <img width="700" alt="image" src="https://github.com/user-attachments/assets/b776fb02-6407-46c2-b52d-0e96d8b5f7cf">
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/b776fb02-6407-46c2-b52d-0e96d8b5f7cf">
+
 - @PathVariable String id(t01,t02,t03)
     * http://localhost:8080/api/trainings/t01
 - @RequestParam String trainingId(t01,t02,t03)
     * http://localhost:8080/training/display-details?trainingId=t03
     * ("/display-details") + ?trainingId=t03 : URl 뒤에 쿼리 적용
 - @Validated : 유효성검증
-   <img width="700" alt="image" src="https://github.com/user-attachments/assets/a2e818d4-1db9-4b02-a8e7-7c2a1bbf19ef">
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/a2e818d4-1db9-4b02-a8e7-7c2a1bbf19ef">
 - @ExceptionHandler(CapacityOverException.class)
     * public String handleCapacityOverException(Model model)
     * return "reservation/capacityOver"; : 예외처리 똑같이 뷰, 반환
-   <img width="700" alt="image" src="https://github.com/user-attachments/assets/31c958a5-b28b-46b1-b779-e74112b4d8d3">
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/31c958a5-b28b-46b1-b779-e74112b4d8d3">
 - @PostMapping(value = "/reserve", params = "reserve") // 신청확정
 - @PostMapping(value = "/reserve", params = "correct") // 신청 내용 변경
     * 프론트에서 보내는 데이터는 동일, 백단에서 인자로 구분
