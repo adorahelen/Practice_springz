@@ -80,9 +80,16 @@
     * public String 함수이름아무거나(Model model <-뷰에 추가시키기 위한)
     * return "training/trainingList"; : 반환할 뷰 파일
 </br>
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/b776fb02-6407-46c2-b52d-0e96d8b5f7cf">
 
 - @PathVariable String id
-- @RequestParam String trainingId
+    * http://localhost:8080/api/trainings/t01
+- @RequestParam String trainingId(01||02||03)
+    * http://localhost:8080/training/display-details?trainingId=t03
+    * ("/display-details") + ?trainingId=t03 : URl 뒤에 쿼리 적용
+  
+
+  
 
 
 
