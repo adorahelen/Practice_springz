@@ -6,6 +6,8 @@ import edu.example.training.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -38,7 +40,15 @@ public class ReservationController {
     }
 
     @PostMapping("/validate-input")
-    public String validateInput(){
+    public String validateInput(@Validated ReservationInput reservationInput,
+                                BindingResult bindingResult, Model model){
+        System.out.println("/reservation/validate-input");
+        // ㅇㅣㅂ력 오류 는 원랴 화면 입력 오류 없으면 확인화면으로
+        if (bindingResult.hasErrors()) {
+            List<StudentType> studentTypes = reservationService.getStudentTypes();
+            model.addAttribute("studentTypeList", studentTypes);
+            return "reservation/reservationForm";
+        }
 
         return "reservation/reservationConfirm";
 

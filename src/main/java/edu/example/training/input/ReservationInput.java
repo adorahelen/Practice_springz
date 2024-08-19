@@ -17,8 +17,12 @@ public class ReservationInput {
     @NotBlank
     private String name;
 
+//    @NotBlank
+//    @Pattern(regexp = "0\\d{1,4}-\\d{1,4}\\d{4}")
+//    private String phone;
+
     @NotBlank
-    @Pattern(regexp = "0\\d{1,4}-\\d{1,4}\\d{4}")
+    @Pattern(regexp = "0\\d{1,2}-\\d{3,4}-\\d{4}")
     private String phone;
 
     @NotBlank
