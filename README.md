@@ -78,7 +78,10 @@
 - @Controller : 일반, 뷰파일 반환
     * @GetMapping("/display-List") : 이건 RestAPI와 동일함
     * public String 함수이름아무거나(Model model <-뷰에 추가시키기 위한)
-    * return "training/trainingList"; : 반환할 뷰 파일 
+    * return "training/trainingList"; : 반환할 뷰 파일
+</br>
+- @PathVariable String id
+- @RequestParam String trainingId
 
 
 
