@@ -23,7 +23,7 @@ public class TrainingAdminRestController {
 
     @GetMapping("/api/trainings/{id}")
     public Training getTrainingId(@PathVariable String id) {
-
+// http://localhost:8080/api/trainings/t01
         return trainingService.findById(id);
     }
 }

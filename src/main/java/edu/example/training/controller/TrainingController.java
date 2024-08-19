@@ -23,11 +23,10 @@ public class TrainingController {
 
     @GetMapping("/display-details")
     public String displayDetails(@RequestParam String trainingId, Model model) {
-
         Training training= trainingService.findById(trainingId);
         model.addAttribute("training", training);
 
-
+// http://localhost:8080/training/display-details?trainingId=t03
         return "training/trainingDetails";
 
         //@RequestParam : 함수의 매개변수로 트래이닝 아이디와 모델(값=dto=input)
