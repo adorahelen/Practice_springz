@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
@@ -70,6 +71,20 @@ public class AdminController {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     public String handleNotFound() {
         return "예외 발생 : 데이터 XXXXX";
+    }
+    @GetMapping("/api/test2/{id}")
+    public Training test2(@PathVariable String id) {
+        // org.springframework.beans.factory.BeanCreationException:
+        // Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource
+        // [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]:
+        // Ambiguous mapping. Cannot map 'adminController' method
+
+        Training training = null;
+
+        if(training == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+        return training;
     }
 
 }
