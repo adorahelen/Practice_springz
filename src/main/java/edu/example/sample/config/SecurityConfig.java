@@ -13,7 +13,7 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
     @Bean // 필터체인
     public SecurityFilterChain
-    securityFilterChain(HttpSecurity http, HttpSecurity httpSSS)
+    securityFilterChain(HttpSecurity httpSSS)
             throws Exception {
         httpSSS.authorizeHttpRequests( // 요청 관련 인증 설정
                 req -> req.requestMatchers(HttpMethod.POST,
@@ -27,12 +27,12 @@ public class SecurityConfig {
                         .anyRequest().permitAll()
         ).formLogin(login-> // 로그인 화면 설정
                 login.loginPage("/login")
-                        .defaultSuccessUrl("/display-sample/")
+                        .defaultSuccessUrl("/display-sample")
                         .failureUrl("/login?failure")
 
         ).exceptionHandling(handling-> // 예외 - 접근 거부 설정
                 handling.accessDeniedPage("/display-access-denied"));
 
-        return http.build();
+        return httpSSS.build();
     }
 }
