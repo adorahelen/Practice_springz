@@ -52,7 +52,7 @@ public class AdminController {
        adminService.deleteTraining(id);
     }
 
-    @GetMapping("/api/trainings/{id}")
+    @GetMapping("/api/test/{id}")
     public Training test(@PathVariable String id) {
         Training training = null;
 
@@ -62,8 +62,9 @@ public class AdminController {
         return training;
     }
     @ExceptionHandler(DataNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
     public String handleNotFound() {
-        return e.getMessage();
+        return "예외 발생 : 데이터 XXXXX";
     }
 
 }
