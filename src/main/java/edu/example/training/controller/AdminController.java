@@ -2,6 +2,7 @@ package edu.example.training.controller;
 
 import edu.example.shopping.input.TrainingInput;
 import edu.example.training.entity.Training;
+import edu.example.training.exception.DataNotFoundException;
 import edu.example.training.service.AdminService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -45,4 +46,24 @@ public class AdminController {
        // 기존 URL 뒤에, add 를 통해 새롭게 추가된 id에 따른 URI를 만들고 추가시킨 다음 반환한다. (기존 링크 뒤에 접미사를 추가한거임)
         // 생성됨-> http://localhost:8080/api/trainings/t99
     }
+    @DeleteMapping("/api/trainings/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteTrainings(@PathVariable String id) {
+       adminService.deleteTraining(id);
+    }
+
+    @GetMapping("/api/trainings/{id}")
+    public Training test(@PathVariable String id) {
+        Training training = null;
+
+        if(training == null) {
+            throw new DataNotFoundException(" 데이터를 찾을 수 없습니다 " + id);
+        }
+        return training;
+    }
+    @ExceptionHandler(DataNotFoundException.class)
+    public String handleNotFound() {
+        return e.getMessage();
+    }
+
 }
