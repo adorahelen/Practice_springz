@@ -2,6 +2,7 @@ package edu.example.training.service;
 
 
 
+import edu.example.shopping.input.TrainingInput;
 import edu.example.training.entity.Training;
 import edu.example.training.repository.TrainingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,11 @@ public class TrainingServiceImpl implements TrainingService{
     public List<Training> findList() {
         return trainingRepository.selectList();
     }
+
+//    @Override
+//    public void modify(TrainingInput trainingInput) {
+//        return trainingRepository.modify();
+//    }
 }
 
 
