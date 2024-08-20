@@ -10,4 +10,5 @@ public interface AdminService {
     List<Training> findList();
     void modify(TrainingInput trainingInput);
     Training addTraining(TrainingInput trainingInput);
+    void deleteTraining(String trainingId);
 }

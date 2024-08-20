@@ -56,4 +56,9 @@ public class AdminServiceImpl implements AdminService{
         trainingRepository.insert(training);
         return training;
     }
+
+    @Override
+    public void deleteTraining(String trainingId) {
+        trainingRepository.delete(trainingId);
+    }
 }
