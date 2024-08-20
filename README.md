@@ -66,6 +66,9 @@
 - <artifactId>spring-boot-starter-security</artifactId>
 - <artifactId>thymeleaf-extras-springsecurity6</artifactId>
 
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/2ba23a57-74c3-4e3e-b4bd-58eb7d976106">
+
+
 
 ## 6. 어노테이션
 - @SpringBootApplication : 메인함수가 존재하는 클래스 위에 붙인다, 시작점
