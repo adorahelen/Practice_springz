@@ -54,6 +54,11 @@ public class AdminController {
 
     @GetMapping("/api/test/{id}")
     public Training test(@PathVariable String id) {
+       // org.springframework.beans.factory.BeanCreationException:
+        // Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource
+        // [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]:
+        // Ambiguous mapping. Cannot map 'adminController' method
+
         Training training = null;
 
         if(training == null) {
