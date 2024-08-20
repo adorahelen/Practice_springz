@@ -62,6 +62,7 @@
 ## 5. 스프링 시큐리티
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/1bc2a1c1-5588-431a-ada2-dd05357a6e51">
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/c33d42d6-2a1a-4add-9e48-552d0a623a08">
+
 - <artifactId>spring-boot-starter-security</artifactId>
 - <artifactId>thymeleaf-extras-springsecurity6</artifactId>
 
