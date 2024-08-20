@@ -12,4 +12,5 @@ public interface TrainingRepository {
     List<Training> selectList();
 
     boolean insert(Training training);
+    boolean delete(String id);
 }

@@ -72,5 +72,12 @@ public class JdbcTrainingRepository implements TrainingRepository {
         return result == 1;
     }
 
+    @Override
+    public boolean delete(String id) {
+        int result = jdbcTemplate.update("DELETE FROM training WHERE id = ?", id);
+
+        return result == 1;
+    }
+
 
 }
