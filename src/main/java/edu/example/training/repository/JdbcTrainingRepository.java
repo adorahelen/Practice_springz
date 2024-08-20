@@ -1,5 +1,7 @@
 package edu.example.training.repository;
 
+import edu.example.shopping.input.TrainingInput;
+import edu.example.training.entity.Reservation;
 import edu.example.training.entity.Training;
 import org.springframework.jdbc.core.DataClassRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -51,7 +53,24 @@ public class JdbcTrainingRepository implements TrainingRepository {
         );
     }
 
+    @Override
+    public boolean insert(Training training) {
 
+        int result = jdbcTemplate.update(
+                """
+                INSERT INTO training VALUES (?,?,?,?,?,?)
+                """,
+                training.getId(),
+                training.getTitle(),
+                training.getStartDateTime(),
+                training.getEndDateTime(),
+                training.getReserved(),
+                training.getCapacity()
+
+        );
+
+        return result == 1;
+    }
 
 
 }

@@ -10,4 +10,6 @@ public interface TrainingRepository {
     Training selectById(String id);
     boolean update(Training training);
     List<Training> selectList();
+
+    boolean insert(Training training);
 }
