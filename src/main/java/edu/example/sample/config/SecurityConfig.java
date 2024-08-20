@@ -15,7 +15,7 @@ public class SecurityConfig {
     public SecurityFilterChain
     securityFilterChain(HttpSecurity http, HttpSecurity httpSSS)
             throws Exception {
-        httpSSS.authorizeHttpRequests(
+        httpSSS.authorizeHttpRequests( // 요청 관련 인증 설정
                 req -> req.requestMatchers(HttpMethod.POST,
                    "/display-sample/**")
                         .hasRole("ADMIN")
@@ -25,14 +25,14 @@ public class SecurityConfig {
                                 "ADMIN", "STAFF"
                         )
                         .anyRequest().permitAll()
-        ).formLogin(login->
+        ).formLogin(login-> // 로그인 화면 설정
                 login.loginPage("/login")
                         .defaultSuccessUrl("/display-sample/")
                         .failureUrl("/login?failure")
 
-        ).exceptionHandling(handling->
+        ).exceptionHandling(handling-> // 예외 - 접근 거부 설정
                 handling.accessDeniedPage("/display-access-denied"));
 
-        return null;
+        return http.build();
     }
 }
