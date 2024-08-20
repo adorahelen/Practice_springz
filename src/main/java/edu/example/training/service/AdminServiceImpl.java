@@ -54,5 +54,6 @@ public class AdminServiceImpl implements AdminService{
                 trainingInput.getCapacity());
 
         trainingRepository.insert(training);
+        return training;
     }
 }
