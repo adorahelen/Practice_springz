@@ -2,12 +2,16 @@ package edu.example.training.repository;
 
 import edu.example.training.entity.Reservation;
 import edu.example.training.entity.StudentType;
+import edu.example.training.entity.Training;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.ResultSetExtractor;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 @Repository
 public class JdbcReservationRepository implements ReservationRepository{
@@ -51,6 +55,49 @@ public class JdbcReservationRepository implements ReservationRepository{
                 new ReservationRowMapper(),
                 id);
     }
+
+    @Override
+    public Training selectTrainingID(String id) {
+        String query = """
+                SELECT t.id AS t_id,
+                       t.title,
+                       t.start_date_time,
+                       r.id AS r_id,
+                       r.name
+                FROM   training t
+                LEFT OUTER JOIN reservation r
+                ON     t.id = r.trainingId
+                WHERE  t.id = ?
+           
+                """;
+                return jdbcTemplate.query(query, new TrainingResultSetExtractor(), id);
+
+    }
+    static class TrainingResultSetExtractor implements ResultSetExtractor<Training> {
+
+        @Override
+        public Training extractData(ResultSet rs) throws SQLException, DataAccessException {
+            Training training = null;
+            while (rs.next()) {
+                if (training == null) {
+                    training = new Training();
+                    training.setId(rs.getString("t_id"));
+                    training.setTitle(rs.getString("title"));
+                    training.setStartDateTime(rs.getTimestamp("start_date_time")
+                            .toLocalDateTime());
+                    training.setReservations(new ArrayList<>());
+                }
+                Reservation reservation = new Reservation();
+                reservation.setId(rs.getString("r_id"));
+                reservation.setTrainingId(rs.getString("t_id"));
+                reservation.setName(rs.getString("name"));
+
+                training.getReservations().add(reservation);
+            }
+            return training;
+        }
+    }
+
     static class ReservationRowMapper implements RowMapper<Reservation> {
         @Override
         public Reservation mapRow(ResultSet rs, int rowNum) throws SQLException {

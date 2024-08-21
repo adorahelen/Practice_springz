@@ -77,4 +77,9 @@ public class ReservationServiceImpl implements ReservationService {
     public Reservation findById(String id) {
         return reservationRepository.selectById(id);
     }
+
+    @Override
+    public Training findTrainingById(String id) {
+        return reservationRepository.selectTrainingID(id);
+    }
 }

@@ -23,6 +23,7 @@ public class ReservationController {
     private final ReservationService reservationService;
     private final TrainingService trainingService;
 
+
     // 하나니까 안쓰고 저번에는 여로개로서 쓴거고 다 하기 싫으면 올알규스
     public ReservationController(ReservationService reservationService, TrainingService trainingService) {
 
@@ -99,6 +100,14 @@ public class ReservationController {
         return reservationService.findById(reservationId);
     }
 // http://localhost:8080/reservation/display-details?reservationId=r01
+
+
+
+    @GetMapping("/training-details")
+    @ResponseBody
+    public Training trainingDetails(String trainingId) {
+        return reservationService.findTrainingById(trainingId);
+    }
 
 
 }
