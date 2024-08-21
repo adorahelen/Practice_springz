@@ -72,4 +72,9 @@ public class ReservationServiceImpl implements ReservationService {
 
         return reservation;
     }
+
+    @Override
+    public Reservation findById(String id) {
+        return reservationRepository.selectById(id);
+    }
 }

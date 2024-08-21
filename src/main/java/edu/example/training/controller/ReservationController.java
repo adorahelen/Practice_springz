@@ -93,5 +93,12 @@ public class ReservationController {
         return "reservation/capacityOver";
     }
 
+    @GetMapping("/display-details")
+    @ResponseBody
+    public Reservation displayDetails(String reservationId) {
+        return reservationService.findById(reservationId);
+    }
+// http://localhost:8080/reservation/display-details?reservationId=r01
+
 
 }
