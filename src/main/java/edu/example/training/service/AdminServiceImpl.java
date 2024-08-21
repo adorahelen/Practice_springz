@@ -38,7 +38,7 @@ public class AdminServiceImpl implements AdminService{
                 trainingInput.getStartDateTime(),
                 trainingInput.getEndDateTime(),
                 trainingInput.getReserved(),
-                trainingInput.getCapacity());
+                trainingInput.getCapacity(), null);
 
         trainingRepository.update(training);
 
@@ -51,7 +51,7 @@ public class AdminServiceImpl implements AdminService{
                 trainingInput.getStartDateTime(),
                 trainingInput.getEndDateTime(),
                 trainingInput.getReserved(),
-                trainingInput.getCapacity());
+                trainingInput.getCapacity(), null);
 
         trainingRepository.insert(training);
         return training;
