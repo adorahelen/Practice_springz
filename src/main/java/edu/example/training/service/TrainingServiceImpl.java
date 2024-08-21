@@ -6,6 +6,7 @@ import edu.example.shopping.input.TrainingInput;
 import edu.example.training.entity.Training;
 import edu.example.training.repository.TrainingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,13 +27,14 @@ public class TrainingServiceImpl implements TrainingService{
 
 
     @Override
-    public Training findById(String trainingId) {
-        return trainingRepository.selectById(trainingId);
+    public List<Training> findList() {
+        return trainingRepository.selectList();
     }
 
     @Override
-    public List<Training> findList() {
-        return trainingRepository.selectList();
+   // @PreAuthorize("hasRole('ADMIN')")
+    public Training findById(String trainingId) {
+        return trainingRepository.selectById(trainingId);
     }
 
 //    @Override
