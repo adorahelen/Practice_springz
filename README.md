@@ -86,7 +86,10 @@
 - @Controller : 일반, 뷰파일 반환
     * @GetMapping("/display-List") : 이건 RestAPI와 동일함
     * public String 함수이름아무거나(Model model <-뷰에 추가시키기 위한)
-    * return "training/trainingList"; : 반환할 뷰 파일  
+    * return "training/trainingList"; : 반환할 뷰 파일
+- @RequestBody : HTTP 요청의 본문(body)을 자바 객체로 변환(역직렬화)하는 데 사용됩니다. 주로 JSON, XML 등의 데이터를 자바 객체로 매핑, JSON to Object
+- @ResponseBody : 반환 값을 HTTP 응답 본문으로 직접 쓰는 데 사용됩니다. 주로 JSON, XML 등의 형식으로 데이터를 반환(직렬화)하는 REST 컨트롤러에서 사용, Object to JSON
+-  @ResponseEntity : HTTP 응답 전체를 표현하는 데 사용되며, 상태 코드, 헤더, 본문을 모두 제어, ResponseEntity<>(user:JSON으로 만들 데이터, HttpStatus.OK:상태코드);
 
 ## 7. 핵심
 - 뷰를 반환(HTML)
