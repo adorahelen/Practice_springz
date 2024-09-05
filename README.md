@@ -80,6 +80,10 @@
 
 - <artifactId>spring-boot-starter-security</artifactId>
 - <artifactId>thymeleaf-extras-springsecurity6</artifactId>
+- UserDetails: 사용자 정보를 나타내는 인터페이스로, 사용자 이름, 비밀번호, 권한 등을 정의
+- UserDetailsService: UserDetails 객체를 반환하는 서비스 인터페이스로, 스프링 시큐리티가 사용자 정보를 인증할 때 이 인터페이스를 통해 사용자 정보를 로드
+- SecurityContext: 현재 애플리케이션에서 인증된 사용자의 정보를 담고 있는 객체로, 사용자에 대한 인증 및 권한 정보를 저장
+- SecurityContextHolder: SecurityContext를 저장하고 접근할 수 있게 해주는 헬퍼 클래스 (dto 역할)
 
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/2ba23a57-74c3-4e3e-b4bd-58eb7d976106">
 
