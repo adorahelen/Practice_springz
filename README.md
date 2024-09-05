@@ -3,6 +3,8 @@
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/708990f4-92f0-438c-9dfc-23c47e57af27">
 
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/888ed7da-352d-4528-9026-9a8a5ec74a59">
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/4e5e0012-36ff-4e24-a441-4902786aec7c">
+
 
 - 생성자 기반 의존관계 주입을 선택해야 하는 이유?
     * 초기화시에 필요한 모든 의존관계가 형성되기 때문에 안전합니다.
